@@ -1,8 +1,7 @@
-﻿using Microsoft.Azure.Functions.Extensions.DependencyInjection;
+﻿using Energy.Catapult.Challenge.Azure.Functions.Domain.Forecasts;
+using Energy.Catapult.Challenge.Azure.Functions.Domain.Model;
+using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 
 [assembly: FunctionsStartup(typeof(Energy.Catapult.Challenge.Azure.Functions.Startup))]
@@ -15,6 +14,8 @@ namespace Energy.Catapult.Challenge.Azure.Functions
         public override void Configure(IFunctionsHostBuilder builder)
         {
             builder.Services.AddHttpClient();
+            //builder.Services.AddSingleton<IServiceCollection>(builder.Services);
+            builder.Services.AddTransient<IForecaster<PvForecastRequest, ForecastResult>, PvForecaster>();
         }
     }
 }
