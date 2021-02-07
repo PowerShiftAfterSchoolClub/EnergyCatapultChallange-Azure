@@ -12,7 +12,7 @@ namespace SwaggerUIAzureFunc
         [SwaggerIgnore]
         [FunctionName("Swagger")]
         public static Task<HttpResponseMessage> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "swagger/json")]
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "swagger/json")]
             HttpRequestMessage req,
             [SwashBuckleClient] ISwashBuckleClient swashBuckleClient)
         {
@@ -22,7 +22,7 @@ namespace SwaggerUIAzureFunc
         [SwaggerIgnore]
         [FunctionName("SwaggerUi")]
         public static Task<HttpResponseMessage> Run2(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "swagger/ui")]
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "swagger/ui")]
             HttpRequestMessage req,
             [SwashBuckleClient] ISwashBuckleClient swashBuckleClient)
         {
