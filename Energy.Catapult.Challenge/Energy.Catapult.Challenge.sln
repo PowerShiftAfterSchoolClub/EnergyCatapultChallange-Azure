@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Energy.Catapult.Challenge.Azure.Functions", "Energy.Catapult.Challenge.Azure.Functions\Energy.Catapult.Challenge.Azure.Functions.csproj", "{6638418C-9AB5-42E8-9DCD-DA9D9FF45E79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Energy.Catapult.Challenge.Azure.Functions", "Energy.Catapult.Challenge.Azure.Functions\Energy.Catapult.Challenge.Azure.Functions.csproj", "{6638418C-9AB5-42E8-9DCD-DA9D9FF45E79}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Energy.Captapult.Challenge.DataAccess", "Energy.Captapult.Challenge.DataAccess\Energy.Captapult.Challenge.DataAccess.csproj", "{7150196E-22DD-4FC8-A58C-05D346C06635}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6638418C-9AB5-42E8-9DCD-DA9D9FF45E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6638418C-9AB5-42E8-9DCD-DA9D9FF45E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6638418C-9AB5-42E8-9DCD-DA9D9FF45E79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7150196E-22DD-4FC8-A58C-05D346C06635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7150196E-22DD-4FC8-A58C-05D346C06635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7150196E-22DD-4FC8-A58C-05D346C06635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7150196E-22DD-4FC8-A58C-05D346C06635}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

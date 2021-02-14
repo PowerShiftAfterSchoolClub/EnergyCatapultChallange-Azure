@@ -17,9 +17,9 @@ namespace Energy.Catapult.Challenge.Azure.Functions.Functions
 {
     public class PvForecast
     {
-        private readonly IForecaster<PvForecastRequest, ForecastResult> forecaster;
+        private readonly IForecaster<ForecastRequest, ForecastResult> forecaster;
 
-        public PvForecast(IForecaster<PvForecastRequest, ForecastResult> forecaster)
+        public PvForecast(IForecaster<ForecastRequest, ForecastResult> forecaster)
         {
             this.forecaster = forecaster ?? throw new System.ArgumentNullException(nameof(forecaster));
         }
@@ -98,6 +98,7 @@ namespace Energy.Catapult.Challenge.Azure.Functions.Functions
         /// <returns>Generated forecast</returns>
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<ForecastPeriod>))]
         [Produces("application/json")]
+        [Consumes("application/json")]
         [FunctionName("PvForecast")]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "POST", Route = null)] HttpRequest req,
@@ -110,7 +111,7 @@ namespace Energy.Catapult.Challenge.Azure.Functions.Functions
                 requestBody = await streamReader.ReadToEndAsync();
             }
 
-            var pvRequest = JsonSerializer.Deserialize<PvForecastRequest>(requestBody);
+            var pvRequest = JsonSerializer.Deserialize<ForecastRequest>(requestBody);
 
             // Call the forecaster
             var rawForecast = await this.forecaster.GetAsync(pvRequest);

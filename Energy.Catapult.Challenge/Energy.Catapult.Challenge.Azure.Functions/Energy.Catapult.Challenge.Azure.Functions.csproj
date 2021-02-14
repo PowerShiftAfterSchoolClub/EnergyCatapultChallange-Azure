@@ -5,12 +5,17 @@
     <UserSecretsId>619b6594-753f-426b-aa45-ecb55aebedd4</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="AzureExtensions.Swashbuckle" Version="3.2.2" />
     <PackageReference Include="AzureFunctions.Extensions.Swashbuckle" Version="1.4.4" />
     <PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="3.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.12" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="3.1.11" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.11" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Energy.Captapult.Challenge.DataAccess\Energy.Captapult.Challenge.DataAccess.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">

@@ -1,6 +1,6 @@
 ﻿namespace Energy.Catapult.Challenge.Azure.Functions.Domain.Model
 {
-    public class PvForecastRequestItem
+    public class ForecastRequestItem
     {
         public string dateTimeUTC { get; set; }
         public double temp_location3 { get; set; }

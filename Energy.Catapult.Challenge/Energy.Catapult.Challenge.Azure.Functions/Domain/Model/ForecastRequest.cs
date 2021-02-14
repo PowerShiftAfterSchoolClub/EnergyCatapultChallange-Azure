@@ -5,8 +5,8 @@ using System.Text.Json.Serialization;
 namespace Energy.Catapult.Challenge.Azure.Functions.Domain.Model
 {
 
-    public class PvForecastRequest
+    public class ForecastRequest
     {
-        public IList<PvForecastRequestItem> data { get; set; }
+        public IList<ForecastRequestItem> data { get; set; }
     }
 }

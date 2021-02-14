@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace Energy.Catapult.Challenge.Azure.Functions.Domain.Forecasts
 {
-    class PvForecaster : IForecaster<ForecastRequest, ForecastResult>
+    class DemandForecaster : IForecaster<ForecastRequest, ForecastResult>
     {
         private readonly HttpClient http;
 
-        public PvForecaster(HttpClient http)
+        public DemandForecaster(HttpClient http)
         {
             this.http = http ?? throw new ArgumentNullException(nameof(http));
         }
 
-        public string Name => "PV Forecaster";
+        public string Name => "Demand Forecaster";
 
         public async Task<ForecastResult> GetAsync(ForecastRequest request)
         {
             // TODO: Put into config
-            string modelUrl = "http://bb1b2bd0-0430-490d-aab8-6cb3aaed5bc6.uksouth.azurecontainer.io/score";
+            string modelUrl = "http://06d43483-e30f-418c-90e4-f0a37c38453e.uksouth.azurecontainer.io/score";
 
             var response = await this.http.PostAsJsonAsync(modelUrl, request);
 
