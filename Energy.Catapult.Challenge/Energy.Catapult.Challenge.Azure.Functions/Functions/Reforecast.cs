@@ -1,18 +1,16 @@
-using System;
-using System.IO;
-using System.Threading.Tasks;
+using AutoMapper;
+using Energy.Captapult.Challenge.DataAccess;
+using Energy.Catapult.Challenge.Azure.Functions.Domain.Forecasts;
+using Energy.Catapult.Challenge.Azure.Functions.Domain.Model;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using Energy.Captapult.Challenge.DataAccess;
-using System.Linq;
-using AutoMapper;
-using Energy.Catapult.Challenge.Azure.Functions.Domain.Model;
+using System;
 using System.Collections.Generic;
-using Energy.Catapult.Challenge.Azure.Functions.Domain.Forecasts;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Energy.Catapult.Challenge.Azure.Functions.Functions
 {
@@ -38,6 +36,8 @@ namespace Energy.Catapult.Challenge.Azure.Functions.Functions
             this.dbClient.ChangeTracker.AutoDetectChangesEnabled = false;
         }
 
+        [Produces("application/json")]
+        [Consumes("application/json")]
         [FunctionName("Reforecast")]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
@@ -70,11 +70,11 @@ namespace Energy.Catapult.Challenge.Azure.Functions.Functions
             // Get PV and Demand forecasts from the ML
             var forecast = await this.GetPvAndDemandForecasts(task, request);
 
-            // Save into the database
+            // Save into the database (need new table for this)
            
-            this.dbClient.Task0ForecastsPvandDemandRun1s.UpdateRange(forecast);
+            //this.dbClient.Task0ForecastsPvandDemandRun1s.UpdateRange(forecast);
             
-            this.dbClient.SaveChanges();
+            //this.dbClient.SaveChanges();
 
             // Return both to user
             return new OkObjectResult(new
