@@ -7,10 +7,10 @@ using System.Collections.Generic;
 
 namespace Energy.Captapult.Challenge.DataAccess
 {
-    public partial class Task0TrainingCalendarPvweatherHh
+    public partial class Task1TrainingCalendarPvweatherHh
     {
         public DateTime DateTimeUtc { get; set; }
-        public double? RawPvPowerMw { get; set; }
+        public double? PvPowerMw { get; set; }
         public double TempLocation3 { get; set; }
         public double TempLocation6 { get; set; }
         public double TempLocation2 { get; set; }

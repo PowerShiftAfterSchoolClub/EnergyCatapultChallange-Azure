@@ -2,7 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-#nullable disable
+// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
+// If you have enabled NRTs for your project, then un-comment the following line:
+// #nullable disable
 
 namespace Energy.Captapult.Challenge.DataAccess
 {
@@ -10,7 +12,6 @@ namespace Energy.Captapult.Challenge.DataAccess
     {
         public dBEnergyCatapultPresumedOpenDataChallangeContext()
         {
-           
         }
 
         public dBEnergyCatapultPresumedOpenDataChallangeContext(DbContextOptions<dBEnergyCatapultPresumedOpenDataChallangeContext> options)
@@ -18,101 +19,192 @@ namespace Energy.Captapult.Challenge.DataAccess
         {
         }
 
-        public virtual DbSet<Asset> Assets { get; set; }
-        public virtual DbSet<CalendarMap> CalendarMaps { get; set; }
-        public virtual DbSet<DemandTrainSet0> DemandTrainSet0s { get; set; }
-        public virtual DbSet<PvTrainSet0> PvTrainSet0s { get; set; }
-        public virtual DbSet<Result> Results { get; set; }
-        public virtual DbSet<Task> Tasks { get; set; }
-        public virtual DbSet<Task0ForecastCalendarMapWithForecastWeatherHh> Task0ForecastCalendarMapWithForecastWeatherHhs { get; set; }
-        public virtual DbSet<Task0ForecastsPvandDemandRun1> Task0ForecastsPvandDemandRun1s { get; set; }
-        public virtual DbSet<Task0TrainingCalWeatherHh> Task0TrainingCalWeatherHhs { get; set; }
-        public virtual DbSet<Task0TrainingCalendarDemandWeatherHh> Task0TrainingCalendarDemandWeatherHhs { get; set; }
-        public virtual DbSet<Task0TrainingCalendarMap> Task0TrainingCalendarMaps { get; set; }
-        public virtual DbSet<Task0TrainingCalendarPvweatherHh> Task0TrainingCalendarPvweatherHhs { get; set; }
-        public virtual DbSet<Task0forecastCalendarMap> Task0forecastCalendarMaps { get; set; }
-        public virtual DbSet<WeatherTrainSet0> WeatherTrainSet0s { get; set; }
-        public virtual DbSet<WeatherTrainSet0Hh> WeatherTrainSet0Hhs { get; set; }
+        public virtual DbSet<Assets> Assets { get; set; }
+        public virtual DbSet<CalendarMap> CalendarMap { get; set; }
+        public virtual DbSet<CalendarMapOld> CalendarMapOld { get; set; }
+        public virtual DbSet<DemandTrainSet0> DemandTrainSet0 { get; set; }
+        public virtual DbSet<DemandTrainSet1> DemandTrainSet1 { get; set; }
+        public virtual DbSet<DemandTrainSet2> DemandTrainSet2 { get; set; }
+        public virtual DbSet<PvTrainSet0> PvTrainSet0 { get; set; }
+        public virtual DbSet<PvTrainSet1> PvTrainSet1 { get; set; }
+        public virtual DbSet<PvTrainSet2> PvTrainSet2 { get; set; }
+        public virtual DbSet<Task0ForecastCalendarMapWithForecastWeatherHh> Task0ForecastCalendarMapWithForecastWeatherHh { get; set; }
+        public virtual DbSet<Task0ForecastsPvandDemandRun1> Task0ForecastsPvandDemandRun1 { get; set; }
+        public virtual DbSet<Task0TrainingCalWeatherHh> Task0TrainingCalWeatherHh { get; set; }
+        public virtual DbSet<Task0TrainingCalendarDemandWeatherHh> Task0TrainingCalendarDemandWeatherHh { get; set; }
+        public virtual DbSet<Task0TrainingCalendarMap> Task0TrainingCalendarMap { get; set; }
+        public virtual DbSet<Task0TrainingCalendarPvweatherHh> Task0TrainingCalendarPvweatherHh { get; set; }
+        public virtual DbSet<Task0forecastCalendarMap> Task0forecastCalendarMap { get; set; }
+        public virtual DbSet<Task1ForecastCalendarMap> Task1ForecastCalendarMap { get; set; }
+        public virtual DbSet<Task1ForecastCalendarMapWithForecastWeatherHh> Task1ForecastCalendarMapWithForecastWeatherHh { get; set; }
+        public virtual DbSet<Task1ForecastsPvandDemandRun1> Task1ForecastsPvandDemandRun1 { get; set; }
+        public virtual DbSet<Task1TrainingCalWeatherHh> Task1TrainingCalWeatherHh { get; set; }
+        public virtual DbSet<Task1TrainingCalendarDemandWeatherHh> Task1TrainingCalendarDemandWeatherHh { get; set; }
+        public virtual DbSet<Task1TrainingCalendarMap> Task1TrainingCalendarMap { get; set; }
+        public virtual DbSet<Task1TrainingCalendarPvweatherHh> Task1TrainingCalendarPvweatherHh { get; set; }
+        public virtual DbSet<Task2ForecastCalendarMap> Task2ForecastCalendarMap { get; set; }
+        public virtual DbSet<Task2ForecastCalendarMapWithForecastWeatherHh> Task2ForecastCalendarMapWithForecastWeatherHh { get; set; }
+        public virtual DbSet<Task2TrainingCalWeatherHh> Task2TrainingCalWeatherHh { get; set; }
+        public virtual DbSet<Task2TrainingCalendarDemandWeatherHh> Task2TrainingCalendarDemandWeatherHh { get; set; }
+        public virtual DbSet<Task2TrainingCalendarMap> Task2TrainingCalendarMap { get; set; }
+        public virtual DbSet<Task2TrainingCalendarPvweatherHh> Task2TrainingCalendarPvweatherHh { get; set; }
+        public virtual DbSet<Tasks> Tasks { get; set; }
+        public virtual DbSet<WeatherTrainSet0> WeatherTrainSet0 { get; set; }
+        public virtual DbSet<WeatherTrainSet0Hh> WeatherTrainSet0Hh { get; set; }
+        public virtual DbSet<WeatherTrainSet1> WeatherTrainSet1 { get; set; }
+        public virtual DbSet<WeatherTrainSet1Hh> WeatherTrainSet1Hh { get; set; }
+        public virtual DbSet<WeatherTrainSet2> WeatherTrainSet2 { get; set; }
+        public virtual DbSet<WeatherTrainSet2Hh> WeatherTrainSet2Hh { get; set; }
+        public virtual DbSet<_10forecastinputsByTask> _10forecastinputsByTask { get; set; }
+        public virtual DbSet<_20forecastoutputsByTaskRun> _20forecastoutputsByTaskRun { get; set; }
+        public virtual DbSet<_30resultsoptimisation> _30resultsoptimisation { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=serverenergycatapult.database.windows.net;Initial Catalog=dBEnergyCatapultPresumedOpenDataChallange;User Id=USER;Password=NO");
+                optionsBuilder.UseSqlServer("Server=serverenergycatapult.database.windows.net;Database=dBEnergyCatapultPresumedOpenDataChallange;User Id=DreamTeam;Password=<PW>;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
-            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
-
-            modelBuilder.Entity<Asset>(entity =>
+            modelBuilder.Entity<Assets>(entity =>
             {
+                entity.HasKey(e => e.AssetId)
+                    .HasName("PK__Assets__7D3DF4F106CA56D2");
+
                 entity.Property(e => e.AssetId).HasColumnName("assetID");
 
                 entity.Property(e => e.AssetName)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("assetName");
+                    .HasColumnName("assetName")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.AssetType)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("assetType");
+                    .HasColumnName("assetType")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.CapacityMwh)
-                    .HasColumnType("decimal(10, 3)")
-                    .HasColumnName("capacityMWh");
+                    .HasColumnName("capacityMWh")
+                    .HasColumnType("decimal(10, 3)");
 
                 entity.Property(e => e.CreatedBy)
                     .IsRequired()
-                    .HasMaxLength(255)
                     .HasColumnName("createdBy")
+                    .HasMaxLength(255)
                     .HasDefaultValueSql("(user_name())");
 
                 entity.Property(e => e.CreatedDate)
-                    .HasColumnType("datetime")
                     .HasColumnName("createdDate")
+                    .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.LocationLatitude)
-                    .HasColumnType("decimal(10, 3)")
-                    .HasColumnName("locationLatitude");
+                    .HasColumnName("locationLatitude")
+                    .HasColumnType("decimal(10, 3)");
 
                 entity.Property(e => e.LocationLongitude)
-                    .HasColumnType("decimal(10, 3)")
-                    .HasColumnName("locationLongitude");
+                    .HasColumnName("locationLongitude")
+                    .HasColumnType("decimal(10, 3)");
 
                 entity.Property(e => e.LocationName)
-                    .HasMaxLength(50)
-                    .HasColumnName("locationName");
+                    .HasColumnName("locationName")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.PowerMw)
-                    .HasColumnType("decimal(10, 3)")
-                    .HasColumnName("powerMW");
+                    .HasColumnName("powerMW")
+                    .HasColumnType("decimal(10, 3)");
             });
 
             modelBuilder.Entity<CalendarMap>(entity =>
             {
-                entity.HasKey(e => e.DateTimeUtc);
+                entity.HasNoKey();
 
-                entity.ToTable("CalendarMap");
+                entity.Property(e => e.BankHoliday)
+                    .IsRequired()
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DayOfWeek)
+                    .IsRequired()
+                    .HasColumnName("dayOfWeek")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.DayOfWeekNumber)
+                    .IsRequired()
+                    .HasColumnName("dayOfWeekNumber")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.HourNumber)
+                    .IsRequired()
+                    .HasColumnName("hourNumber")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.HourText)
+                    .IsRequired()
+                    .HasColumnName("hourText")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.MonthName)
+                    .IsRequired()
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.MonthNum)
+                    .IsRequired()
+                    .HasColumnName("monthNum")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.SettlementPeriod)
+                    .IsRequired()
+                    .HasColumnName("settlementPeriod")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.SummerWinter)
+                    .IsRequired()
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
+
+                entity.Property(e => e.WeekNumber)
+                    .IsRequired()
+                    .HasColumnName("weekNumber")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.WorkingDay)
+                    .IsRequired()
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<CalendarMapOld>(entity =>
+            {
+                entity.HasKey(e => e.DateTimeUtc)
+                    .HasName("PK_CalendarMap");
 
                 entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
 
                 entity.Property(e => e.BankHoliday)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("bankHoliday");
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
 
                 entity.Property(e => e.DayOfWeek)
                     .IsRequired()
-                    .HasMaxLength(10)
                     .HasColumnName("dayOfWeek")
-                    .IsFixedLength(true);
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
 
@@ -120,14 +212,14 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.HourText)
                     .IsRequired()
-                    .HasMaxLength(10)
                     .HasColumnName("hourText")
-                    .IsFixedLength(true);
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.MonthName)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("monthName");
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.MonthNum).HasColumnName("monthNum");
 
@@ -135,8 +227,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.SummerWinter)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("summerWinter");
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
 
@@ -144,8 +236,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.WorkingDay)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("workingDay");
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Year).HasColumnName("year");
             });
@@ -159,6 +251,28 @@ namespace Energy.Captapult.Challenge.DataAccess
                 entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
 
                 entity.Property(e => e.RawDemandMw).HasColumnName("rawDemand_MW");
+            });
+
+            modelBuilder.Entity<DemandTrainSet1>(entity =>
+            {
+                entity.HasKey(e => e.Datetime);
+
+                entity.ToTable("demand_train_set1");
+
+                entity.Property(e => e.Datetime).HasColumnName("datetime");
+
+                entity.Property(e => e.DemandMw).HasColumnName("demand_MW");
+            });
+
+            modelBuilder.Entity<DemandTrainSet2>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("demand_train_set2");
+
+                entity.Property(e => e.Datetime).HasColumnName("datetime");
+
+                entity.Property(e => e.DemandMw).HasColumnName("demand_MW");
             });
 
             modelBuilder.Entity<PvTrainSet0>(entity =>
@@ -176,68 +290,34 @@ namespace Energy.Captapult.Challenge.DataAccess
                 entity.Property(e => e.RawPvPowerMw).HasColumnName("rawPV_power_mw");
             });
 
-            modelBuilder.Entity<Result>(entity =>
+            modelBuilder.Entity<PvTrainSet1>(entity =>
             {
                 entity.HasKey(e => e.Datetime);
 
-                entity.ToTable("results");
+                entity.ToTable("pv_train_set1");
 
                 entity.Property(e => e.Datetime).HasColumnName("datetime");
 
-                entity.Property(e => e.ChargeMw).HasColumnName("charge_MW");
+                entity.Property(e => e.IrradianceWm2).HasColumnName("irradiance_Wm_2");
 
-                entity.Property(e => e.K).HasColumnName("k");
+                entity.Property(e => e.PanelTempC).HasColumnName("panel_temp_C");
 
-                entity.Property(e => e.RunDateTime).HasColumnName("runDateTime");
-
-                entity.Property(e => e.RunId).HasColumnName("runID");
-
-                entity.Property(e => e.TaksSoCmwh).HasColumnName("taksSoCMWh");
-
-                entity.Property(e => e.TaskBatteryChargeMw).HasColumnName("taskBatteryChargeMW");
-
-                entity.Property(e => e.TaskBatteryDischargeMw).HasColumnName("taskBatteryDischargeMW");
-
-                entity.Property(e => e.TaskBatteryNetMw).HasColumnName("taskBatteryNetMW");
-
-                entity.Property(e => e.TaskChargePv).HasColumnName("taskChargePV");
-
-                entity.Property(e => e.TaskForecastDemandMw).HasColumnName("taskForecastDemandMW");
-
-                entity.Property(e => e.TaskForecsatPvmw).HasColumnName("taskForecsatPVMW");
-
-                entity.Property(e => e.TaskGridTopUpMw).HasColumnName("taskGridTopUpMW");
-
-                entity.Property(e => e.TaskNetDemandMw).HasColumnName("taskNetDemandMW");
+                entity.Property(e => e.PvPowerMw).HasColumnName("pv_power_mw");
             });
 
-            modelBuilder.Entity<Task>(entity =>
+            modelBuilder.Entity<PvTrainSet2>(entity =>
             {
-                entity.Property(e => e.TaskId).HasColumnName("taskID");
+                entity.HasNoKey();
 
-                entity.Property(e => e.CreatedBy)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("createdBy")
-                    .HasDefaultValueSql("(user_name())");
+                entity.ToTable("pv_train_set2");
 
-                entity.Property(e => e.CreatedDate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("createdDate")
-                    .HasDefaultValueSql("(getdate())");
+                entity.Property(e => e.Datetime).HasColumnName("datetime");
 
-                entity.Property(e => e.FromDate)
-                    .HasColumnType("date")
-                    .HasColumnName("fromDate");
+                entity.Property(e => e.IrradianceWm2).HasColumnName("irradiance_Wm_2");
 
-                entity.Property(e => e.TaskName)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("taskName");
+                entity.Property(e => e.PanelTempC).HasColumnName("panel_temp_C");
 
-                entity.Property(e => e.ToDate)
-                    .HasColumnType("date")
-                    .HasColumnName("toDate");
+                entity.Property(e => e.PvPowerMw).HasColumnName("pv_power_mw");
             });
 
             modelBuilder.Entity<Task0ForecastCalendarMapWithForecastWeatherHh>(entity =>
@@ -248,8 +328,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.BankHoliday)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("bankHoliday");
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
 
@@ -257,9 +337,9 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.DayOfWeek)
                     .IsRequired()
-                    .HasMaxLength(10)
                     .HasColumnName("dayOfWeek")
-                    .IsFixedLength(true);
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
 
@@ -267,14 +347,14 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.HourText)
                     .IsRequired()
-                    .HasMaxLength(10)
                     .HasColumnName("hourText")
-                    .IsFixedLength(true);
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.MonthName)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("monthName");
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.MonthNum).HasColumnName("monthNum");
 
@@ -294,8 +374,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.SummerWinter)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("summerWinter");
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
 
@@ -315,8 +395,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.WorkingDay)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("workingDay");
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Year).HasColumnName("year");
             });
@@ -334,9 +414,9 @@ namespace Energy.Captapult.Challenge.DataAccess
                 entity.Property(e => e.Task0ForecsatPv).HasColumnName("task0ForecsatPV");
 
                 entity.Property(e => e.TaskName)
-                    .HasMaxLength(10)
                     .HasColumnName("taskName")
-                    .IsFixedLength(true);
+                    .HasMaxLength(10)
+                    .IsFixedLength();
             });
 
             modelBuilder.Entity<Task0TrainingCalWeatherHh>(entity =>
@@ -347,8 +427,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.BankHoliday)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("bankHoliday");
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
 
@@ -356,9 +436,9 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.DayOfWeek)
                     .IsRequired()
-                    .HasMaxLength(10)
                     .HasColumnName("dayOfWeek")
-                    .IsFixedLength(true);
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
 
@@ -366,14 +446,14 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.HourText)
                     .IsRequired()
-                    .HasMaxLength(10)
                     .HasColumnName("hourText")
-                    .IsFixedLength(true);
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.MonthName)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("monthName");
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.MonthNum).HasColumnName("monthNum");
 
@@ -393,8 +473,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.SummerWinter)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("summerWinter");
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
 
@@ -414,8 +494,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.WorkingDay)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("workingDay");
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Year).HasColumnName("year");
             });
@@ -428,8 +508,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.BankHoliday)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("bankHoliday");
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
 
@@ -437,9 +517,9 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.DayOfWeek)
                     .IsRequired()
-                    .HasMaxLength(10)
                     .HasColumnName("dayOfWeek")
-                    .IsFixedLength(true);
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
 
@@ -447,14 +527,14 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.HourText)
                     .IsRequired()
-                    .HasMaxLength(10)
                     .HasColumnName("hourText")
-                    .IsFixedLength(true);
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.MonthName)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("monthName");
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.MonthNum).HasColumnName("monthNum");
 
@@ -476,8 +556,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.SummerWinter)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("summerWinter");
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
 
@@ -497,8 +577,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.WorkingDay)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("workingDay");
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Year).HasColumnName("year");
             });
@@ -511,8 +591,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.BankHoliday)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("bankHoliday");
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
 
@@ -520,9 +600,9 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.DayOfWeek)
                     .IsRequired()
-                    .HasMaxLength(10)
                     .HasColumnName("dayOfWeek")
-                    .IsFixedLength(true);
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
 
@@ -530,14 +610,14 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.HourText)
                     .IsRequired()
-                    .HasMaxLength(10)
                     .HasColumnName("hourText")
-                    .IsFixedLength(true);
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.MonthName)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("monthName");
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.MonthNum).HasColumnName("monthNum");
 
@@ -545,8 +625,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.SummerWinter)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("summerWinter");
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
 
@@ -554,8 +634,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.WorkingDay)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("workingDay");
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Year).HasColumnName("year");
             });
@@ -568,8 +648,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.BankHoliday)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("bankHoliday");
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
 
@@ -577,9 +657,9 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.DayOfWeek)
                     .IsRequired()
-                    .HasMaxLength(10)
                     .HasColumnName("dayOfWeek")
-                    .IsFixedLength(true);
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
 
@@ -587,14 +667,14 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.HourText)
                     .IsRequired()
-                    .HasMaxLength(10)
                     .HasColumnName("hourText")
-                    .IsFixedLength(true);
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.MonthName)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("monthName");
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.MonthNum).HasColumnName("monthNum");
 
@@ -616,8 +696,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.SummerWinter)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("summerWinter");
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
 
@@ -637,8 +717,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.WorkingDay)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("workingDay");
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Year).HasColumnName("year");
             });
@@ -651,8 +731,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.BankHoliday)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("bankHoliday");
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
 
@@ -660,9 +740,9 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.DayOfWeek)
                     .IsRequired()
-                    .HasMaxLength(10)
                     .HasColumnName("dayOfWeek")
-                    .IsFixedLength(true);
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
 
@@ -670,14 +750,14 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.HourText)
                     .IsRequired()
-                    .HasMaxLength(10)
                     .HasColumnName("hourText")
-                    .IsFixedLength(true);
+                    .HasMaxLength(10)
+                    .IsFixedLength();
 
                 entity.Property(e => e.MonthName)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("monthName");
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.MonthNum).HasColumnName("monthNum");
 
@@ -685,8 +765,8 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.SummerWinter)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("summerWinter");
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
 
@@ -694,10 +774,945 @@ namespace Energy.Captapult.Challenge.DataAccess
 
                 entity.Property(e => e.WorkingDay)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnName("workingDay");
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<Task1ForecastCalendarMap>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("task1ForecastCalendarMap");
+
+                entity.Property(e => e.BankHoliday)
+                    .IsRequired()
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DayOfWeek)
+                    .IsRequired()
+                    .HasColumnName("dayOfWeek")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
+
+                entity.Property(e => e.HourNumber).HasColumnName("hourNumber");
+
+                entity.Property(e => e.HourText)
+                    .IsRequired()
+                    .HasColumnName("hourText")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.MonthName)
+                    .IsRequired()
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.MonthNum).HasColumnName("monthNum");
+
+                entity.Property(e => e.SettlementPeriod).HasColumnName("settlementPeriod");
+
+                entity.Property(e => e.SummerWinter)
+                    .IsRequired()
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
+
+                entity.Property(e => e.WeekNumber).HasColumnName("weekNumber");
+
+                entity.Property(e => e.WorkingDay)
+                    .IsRequired()
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<Task1ForecastCalendarMapWithForecastWeatherHh>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("task1ForecastCalendarMapWithForecastWeatherHH");
+
+                entity.Property(e => e.BankHoliday)
+                    .IsRequired()
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DayOfWeek)
+                    .IsRequired()
+                    .HasColumnName("dayOfWeek")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
+
+                entity.Property(e => e.HourNumber).HasColumnName("hourNumber");
+
+                entity.Property(e => e.HourText)
+                    .IsRequired()
+                    .HasColumnName("hourText")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.MonthName)
+                    .IsRequired()
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.MonthNum).HasColumnName("monthNum");
+
+                entity.Property(e => e.SettlementPeriod).HasColumnName("settlementPeriod");
+
+                entity.Property(e => e.SolarLocation1).HasColumnName("solar_location1");
+
+                entity.Property(e => e.SolarLocation2).HasColumnName("solar_location2");
+
+                entity.Property(e => e.SolarLocation3).HasColumnName("solar_location3");
+
+                entity.Property(e => e.SolarLocation4).HasColumnName("solar_location4");
+
+                entity.Property(e => e.SolarLocation5).HasColumnName("solar_location5");
+
+                entity.Property(e => e.SolarLocation6).HasColumnName("solar_location6");
+
+                entity.Property(e => e.SummerWinter)
+                    .IsRequired()
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
+
+                entity.Property(e => e.TempLocation2).HasColumnName("temp_location2");
+
+                entity.Property(e => e.TempLocation3).HasColumnName("temp_location3");
+
+                entity.Property(e => e.TempLocation4).HasColumnName("temp_location4");
+
+                entity.Property(e => e.TempLocation5).HasColumnName("temp_location5");
+
+                entity.Property(e => e.TempLocation6).HasColumnName("temp_location6");
+
+                entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
+
+                entity.Property(e => e.WeekNumber).HasColumnName("weekNumber");
+
+                entity.Property(e => e.WorkingDay)
+                    .IsRequired()
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<Task1ForecastsPvandDemandRun1>(entity =>
+            {
+                entity.HasKey(e => e.DateTimeUtc);
+
+                entity.ToTable("task1ForecastsPVandDemand_Run1");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DemandMwnewModel).HasColumnName("demandMWNewModel");
+
+                entity.Property(e => e.DemandMwoldModel).HasColumnName("demandMWOldModel");
+
+                entity.Property(e => e.PvmwnewModel).HasColumnName("PVMWNewModel");
+
+                entity.Property(e => e.PvmwnewModelCorrected).HasColumnName("PVMWNewModelCorrected");
+
+                entity.Property(e => e.PvmwoldModel).HasColumnName("PVMWOldModel");
+            });
+
+            modelBuilder.Entity<Task1TrainingCalWeatherHh>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("task1TrainingCalWeatherHH");
+
+                entity.Property(e => e.BankHoliday)
+                    .IsRequired()
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DayOfWeek)
+                    .IsRequired()
+                    .HasColumnName("dayOfWeek")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
+
+                entity.Property(e => e.HourNumber).HasColumnName("hourNumber");
+
+                entity.Property(e => e.HourText)
+                    .IsRequired()
+                    .HasColumnName("hourText")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.MonthName)
+                    .IsRequired()
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.MonthNum).HasColumnName("monthNum");
+
+                entity.Property(e => e.SettlementPeriod).HasColumnName("settlementPeriod");
+
+                entity.Property(e => e.SolarLocation1).HasColumnName("solar_location1");
+
+                entity.Property(e => e.SolarLocation2).HasColumnName("solar_location2");
+
+                entity.Property(e => e.SolarLocation3).HasColumnName("solar_location3");
+
+                entity.Property(e => e.SolarLocation4).HasColumnName("solar_location4");
+
+                entity.Property(e => e.SolarLocation5).HasColumnName("solar_location5");
+
+                entity.Property(e => e.SolarLocation6).HasColumnName("solar_location6");
+
+                entity.Property(e => e.SummerWinter)
+                    .IsRequired()
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
+
+                entity.Property(e => e.TempLocation2).HasColumnName("temp_location2");
+
+                entity.Property(e => e.TempLocation3).HasColumnName("temp_location3");
+
+                entity.Property(e => e.TempLocation4).HasColumnName("temp_location4");
+
+                entity.Property(e => e.TempLocation5).HasColumnName("temp_location5");
+
+                entity.Property(e => e.TempLocation6).HasColumnName("temp_location6");
+
+                entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
+
+                entity.Property(e => e.WeekNumber).HasColumnName("weekNumber");
+
+                entity.Property(e => e.WorkingDay)
+                    .IsRequired()
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<Task1TrainingCalendarDemandWeatherHh>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("task1TrainingCalendarDemandWeatherHH");
+
+                entity.Property(e => e.BankHoliday)
+                    .IsRequired()
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DayOfWeek)
+                    .IsRequired()
+                    .HasColumnName("dayOfWeek")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
+
+                entity.Property(e => e.DemandMw).HasColumnName("demand_mw");
+
+                entity.Property(e => e.HourNumber).HasColumnName("hourNumber");
+
+                entity.Property(e => e.HourText)
+                    .IsRequired()
+                    .HasColumnName("hourText")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.MonthName)
+                    .IsRequired()
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.MonthNum).HasColumnName("monthNum");
+
+                entity.Property(e => e.SettlementPeriod).HasColumnName("settlementPeriod");
+
+                entity.Property(e => e.SolarLocation1).HasColumnName("solar_location1");
+
+                entity.Property(e => e.SolarLocation2).HasColumnName("solar_location2");
+
+                entity.Property(e => e.SolarLocation3).HasColumnName("solar_location3");
+
+                entity.Property(e => e.SolarLocation4).HasColumnName("solar_location4");
+
+                entity.Property(e => e.SolarLocation5).HasColumnName("solar_location5");
+
+                entity.Property(e => e.SolarLocation6).HasColumnName("solar_location6");
+
+                entity.Property(e => e.SummerWinter)
+                    .IsRequired()
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
+
+                entity.Property(e => e.TempLocation2).HasColumnName("temp_location2");
+
+                entity.Property(e => e.TempLocation3).HasColumnName("temp_location3");
+
+                entity.Property(e => e.TempLocation4).HasColumnName("temp_location4");
+
+                entity.Property(e => e.TempLocation5).HasColumnName("temp_location5");
+
+                entity.Property(e => e.TempLocation6).HasColumnName("temp_location6");
+
+                entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
+
+                entity.Property(e => e.WeekNumber).HasColumnName("weekNumber");
+
+                entity.Property(e => e.WorkingDay)
+                    .IsRequired()
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<Task1TrainingCalendarMap>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("task1TrainingCalendarMap");
+
+                entity.Property(e => e.BankHoliday)
+                    .IsRequired()
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DayOfWeek)
+                    .IsRequired()
+                    .HasColumnName("dayOfWeek")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
+
+                entity.Property(e => e.HourNumber).HasColumnName("hourNumber");
+
+                entity.Property(e => e.HourText)
+                    .IsRequired()
+                    .HasColumnName("hourText")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.MonthName)
+                    .IsRequired()
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.MonthNum).HasColumnName("monthNum");
+
+                entity.Property(e => e.SettlementPeriod).HasColumnName("settlementPeriod");
+
+                entity.Property(e => e.SummerWinter)
+                    .IsRequired()
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
+
+                entity.Property(e => e.WeekNumber).HasColumnName("weekNumber");
+
+                entity.Property(e => e.WorkingDay)
+                    .IsRequired()
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<Task1TrainingCalendarPvweatherHh>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("task1TrainingCalendarPVWeatherHH");
+
+                entity.Property(e => e.BankHoliday)
+                    .IsRequired()
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DayOfWeek)
+                    .IsRequired()
+                    .HasColumnName("dayOfWeek")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
+
+                entity.Property(e => e.HourNumber).HasColumnName("hourNumber");
+
+                entity.Property(e => e.HourText)
+                    .IsRequired()
+                    .HasColumnName("hourText")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.MonthName)
+                    .IsRequired()
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.MonthNum).HasColumnName("monthNum");
+
+                entity.Property(e => e.PvPowerMw).HasColumnName("pv_power_mw");
+
+                entity.Property(e => e.SettlementPeriod).HasColumnName("settlementPeriod");
+
+                entity.Property(e => e.SolarLocation1).HasColumnName("solar_location1");
+
+                entity.Property(e => e.SolarLocation2).HasColumnName("solar_location2");
+
+                entity.Property(e => e.SolarLocation3).HasColumnName("solar_location3");
+
+                entity.Property(e => e.SolarLocation4).HasColumnName("solar_location4");
+
+                entity.Property(e => e.SolarLocation5).HasColumnName("solar_location5");
+
+                entity.Property(e => e.SolarLocation6).HasColumnName("solar_location6");
+
+                entity.Property(e => e.SummerWinter)
+                    .IsRequired()
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
+
+                entity.Property(e => e.TempLocation2).HasColumnName("temp_location2");
+
+                entity.Property(e => e.TempLocation3).HasColumnName("temp_location3");
+
+                entity.Property(e => e.TempLocation4).HasColumnName("temp_location4");
+
+                entity.Property(e => e.TempLocation5).HasColumnName("temp_location5");
+
+                entity.Property(e => e.TempLocation6).HasColumnName("temp_location6");
+
+                entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
+
+                entity.Property(e => e.WeekNumber).HasColumnName("weekNumber");
+
+                entity.Property(e => e.WorkingDay)
+                    .IsRequired()
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<Task2ForecastCalendarMap>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("task2ForecastCalendarMap");
+
+                entity.Property(e => e.BankHoliday)
+                    .IsRequired()
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DayOfWeek)
+                    .IsRequired()
+                    .HasColumnName("dayOfWeek")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
+
+                entity.Property(e => e.HourNumber).HasColumnName("hourNumber");
+
+                entity.Property(e => e.HourText)
+                    .IsRequired()
+                    .HasColumnName("hourText")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.MonthName)
+                    .IsRequired()
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.MonthNum).HasColumnName("monthNum");
+
+                entity.Property(e => e.SettlementPeriod).HasColumnName("settlementPeriod");
+
+                entity.Property(e => e.SummerWinter)
+                    .IsRequired()
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
+
+                entity.Property(e => e.WeekNumber).HasColumnName("weekNumber");
+
+                entity.Property(e => e.WorkingDay)
+                    .IsRequired()
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<Task2ForecastCalendarMapWithForecastWeatherHh>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("task2ForecastCalendarMapWithForecastWeatherHH");
+
+                entity.Property(e => e.BankHoliday)
+                    .IsRequired()
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DayOfWeek)
+                    .IsRequired()
+                    .HasColumnName("dayOfWeek")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
+
+                entity.Property(e => e.HourNumber).HasColumnName("hourNumber");
+
+                entity.Property(e => e.HourText)
+                    .IsRequired()
+                    .HasColumnName("hourText")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.MonthName)
+                    .IsRequired()
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.MonthNum).HasColumnName("monthNum");
+
+                entity.Property(e => e.SettlementPeriod).HasColumnName("settlementPeriod");
+
+                entity.Property(e => e.SolarLocation1).HasColumnName("solar_location1");
+
+                entity.Property(e => e.SolarLocation2).HasColumnName("solar_location2");
+
+                entity.Property(e => e.SolarLocation3).HasColumnName("solar_location3");
+
+                entity.Property(e => e.SolarLocation4).HasColumnName("solar_location4");
+
+                entity.Property(e => e.SolarLocation5).HasColumnName("solar_location5");
+
+                entity.Property(e => e.SolarLocation6).HasColumnName("solar_location6");
+
+                entity.Property(e => e.SummerWinter)
+                    .IsRequired()
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
+
+                entity.Property(e => e.TempLocation2).HasColumnName("temp_location2");
+
+                entity.Property(e => e.TempLocation3).HasColumnName("temp_location3");
+
+                entity.Property(e => e.TempLocation4).HasColumnName("temp_location4");
+
+                entity.Property(e => e.TempLocation5).HasColumnName("temp_location5");
+
+                entity.Property(e => e.TempLocation6).HasColumnName("temp_location6");
+
+                entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
+
+                entity.Property(e => e.WeekNumber).HasColumnName("weekNumber");
+
+                entity.Property(e => e.WorkingDay)
+                    .IsRequired()
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<Task2TrainingCalWeatherHh>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("task2TrainingCalWeatherHH");
+
+                entity.Property(e => e.BankHoliday)
+                    .IsRequired()
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DayOfWeek)
+                    .IsRequired()
+                    .HasColumnName("dayOfWeek")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
+
+                entity.Property(e => e.HourNumber).HasColumnName("hourNumber");
+
+                entity.Property(e => e.HourText)
+                    .IsRequired()
+                    .HasColumnName("hourText")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.MonthName)
+                    .IsRequired()
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.MonthNum).HasColumnName("monthNum");
+
+                entity.Property(e => e.SettlementPeriod).HasColumnName("settlementPeriod");
+
+                entity.Property(e => e.SolarLocation1).HasColumnName("solar_location1");
+
+                entity.Property(e => e.SolarLocation2).HasColumnName("solar_location2");
+
+                entity.Property(e => e.SolarLocation3).HasColumnName("solar_location3");
+
+                entity.Property(e => e.SolarLocation4).HasColumnName("solar_location4");
+
+                entity.Property(e => e.SolarLocation5).HasColumnName("solar_location5");
+
+                entity.Property(e => e.SolarLocation6).HasColumnName("solar_location6");
+
+                entity.Property(e => e.SummerWinter)
+                    .IsRequired()
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
+
+                entity.Property(e => e.TempLocation2).HasColumnName("temp_location2");
+
+                entity.Property(e => e.TempLocation3).HasColumnName("temp_location3");
+
+                entity.Property(e => e.TempLocation4).HasColumnName("temp_location4");
+
+                entity.Property(e => e.TempLocation5).HasColumnName("temp_location5");
+
+                entity.Property(e => e.TempLocation6).HasColumnName("temp_location6");
+
+                entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
+
+                entity.Property(e => e.WeekNumber).HasColumnName("weekNumber");
+
+                entity.Property(e => e.WorkingDay)
+                    .IsRequired()
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<Task2TrainingCalendarDemandWeatherHh>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("task2TrainingCalendarDemandWeatherHH");
+
+                entity.Property(e => e.BankHoliday)
+                    .IsRequired()
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DayOfWeek)
+                    .IsRequired()
+                    .HasColumnName("dayOfWeek")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
+
+                entity.Property(e => e.DemandMw).HasColumnName("demand_mw");
+
+                entity.Property(e => e.HourNumber).HasColumnName("hourNumber");
+
+                entity.Property(e => e.HourText)
+                    .IsRequired()
+                    .HasColumnName("hourText")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.MonthName)
+                    .IsRequired()
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.MonthNum).HasColumnName("monthNum");
+
+                entity.Property(e => e.SettlementPeriod).HasColumnName("settlementPeriod");
+
+                entity.Property(e => e.SolarLocation1).HasColumnName("solar_location1");
+
+                entity.Property(e => e.SolarLocation2).HasColumnName("solar_location2");
+
+                entity.Property(e => e.SolarLocation3).HasColumnName("solar_location3");
+
+                entity.Property(e => e.SolarLocation4).HasColumnName("solar_location4");
+
+                entity.Property(e => e.SolarLocation5).HasColumnName("solar_location5");
+
+                entity.Property(e => e.SolarLocation6).HasColumnName("solar_location6");
+
+                entity.Property(e => e.SummerWinter)
+                    .IsRequired()
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
+
+                entity.Property(e => e.TempLocation2).HasColumnName("temp_location2");
+
+                entity.Property(e => e.TempLocation3).HasColumnName("temp_location3");
+
+                entity.Property(e => e.TempLocation4).HasColumnName("temp_location4");
+
+                entity.Property(e => e.TempLocation5).HasColumnName("temp_location5");
+
+                entity.Property(e => e.TempLocation6).HasColumnName("temp_location6");
+
+                entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
+
+                entity.Property(e => e.WeekNumber).HasColumnName("weekNumber");
+
+                entity.Property(e => e.WorkingDay)
+                    .IsRequired()
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<Task2TrainingCalendarMap>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("task2TrainingCalendarMap");
+
+                entity.Property(e => e.BankHoliday)
+                    .IsRequired()
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DayOfWeek)
+                    .IsRequired()
+                    .HasColumnName("dayOfWeek")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
+
+                entity.Property(e => e.HourNumber).HasColumnName("hourNumber");
+
+                entity.Property(e => e.HourText)
+                    .IsRequired()
+                    .HasColumnName("hourText")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.MonthName)
+                    .IsRequired()
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.MonthNum).HasColumnName("monthNum");
+
+                entity.Property(e => e.SettlementPeriod).HasColumnName("settlementPeriod");
+
+                entity.Property(e => e.SummerWinter)
+                    .IsRequired()
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
+
+                entity.Property(e => e.WeekNumber).HasColumnName("weekNumber");
+
+                entity.Property(e => e.WorkingDay)
+                    .IsRequired()
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<Task2TrainingCalendarPvweatherHh>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("task2TrainingCalendarPVWeatherHH");
+
+                entity.Property(e => e.BankHoliday)
+                    .IsRequired()
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DayOfWeek)
+                    .IsRequired()
+                    .HasColumnName("dayOfWeek")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
+
+                entity.Property(e => e.HourNumber).HasColumnName("hourNumber");
+
+                entity.Property(e => e.HourText)
+                    .IsRequired()
+                    .HasColumnName("hourText")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.MonthName)
+                    .IsRequired()
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.MonthNum).HasColumnName("monthNum");
+
+                entity.Property(e => e.PvPowerMw).HasColumnName("pv_power_mw");
+
+                entity.Property(e => e.SettlementPeriod).HasColumnName("settlementPeriod");
+
+                entity.Property(e => e.SolarLocation1).HasColumnName("solar_location1");
+
+                entity.Property(e => e.SolarLocation2).HasColumnName("solar_location2");
+
+                entity.Property(e => e.SolarLocation3).HasColumnName("solar_location3");
+
+                entity.Property(e => e.SolarLocation4).HasColumnName("solar_location4");
+
+                entity.Property(e => e.SolarLocation5).HasColumnName("solar_location5");
+
+                entity.Property(e => e.SolarLocation6).HasColumnName("solar_location6");
+
+                entity.Property(e => e.SummerWinter)
+                    .IsRequired()
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
+
+                entity.Property(e => e.TempLocation2).HasColumnName("temp_location2");
+
+                entity.Property(e => e.TempLocation3).HasColumnName("temp_location3");
+
+                entity.Property(e => e.TempLocation4).HasColumnName("temp_location4");
+
+                entity.Property(e => e.TempLocation5).HasColumnName("temp_location5");
+
+                entity.Property(e => e.TempLocation6).HasColumnName("temp_location6");
+
+                entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
+
+                entity.Property(e => e.WeekNumber).HasColumnName("weekNumber");
+
+                entity.Property(e => e.WorkingDay)
+                    .IsRequired()
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<Tasks>(entity =>
+            {
+                entity.HasKey(e => e.TaskId)
+                    .HasName("PK__Tasks__DD5D55A2988DB73E");
+
+                entity.Property(e => e.TaskId).HasColumnName("taskID");
+
+                entity.Property(e => e.CreatedBy)
+                    .IsRequired()
+                    .HasColumnName("createdBy")
+                    .HasMaxLength(255)
+                    .HasDefaultValueSql("(user_name())");
+
+                entity.Property(e => e.CreatedDate)
+                    .HasColumnName("createdDate")
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.FromDate)
+                    .HasColumnName("fromDate")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.TaskName)
+                    .IsRequired()
+                    .HasColumnName("taskName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.ToDate)
+                    .HasColumnName("toDate")
+                    .HasColumnType("date");
             });
 
             modelBuilder.Entity<WeatherTrainSet0>(entity =>
@@ -764,6 +1779,299 @@ namespace Energy.Captapult.Challenge.DataAccess
                 entity.Property(e => e.TempLocation5).HasColumnName("temp_location5");
 
                 entity.Property(e => e.TempLocation6).HasColumnName("temp_location6");
+            });
+
+            modelBuilder.Entity<WeatherTrainSet1>(entity =>
+            {
+                entity.HasKey(e => e.Datetime);
+
+                entity.ToTable("weather_train_set1");
+
+                entity.Property(e => e.Datetime).HasColumnName("datetime");
+
+                entity.Property(e => e.SolarLocation1).HasColumnName("solar_location1");
+
+                entity.Property(e => e.SolarLocation2).HasColumnName("solar_location2");
+
+                entity.Property(e => e.SolarLocation3).HasColumnName("solar_location3");
+
+                entity.Property(e => e.SolarLocation4).HasColumnName("solar_location4");
+
+                entity.Property(e => e.SolarLocation5).HasColumnName("solar_location5");
+
+                entity.Property(e => e.SolarLocation6).HasColumnName("solar_location6");
+
+                entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
+
+                entity.Property(e => e.TempLocation2).HasColumnName("temp_location2");
+
+                entity.Property(e => e.TempLocation3).HasColumnName("temp_location3");
+
+                entity.Property(e => e.TempLocation4).HasColumnName("temp_location4");
+
+                entity.Property(e => e.TempLocation5).HasColumnName("temp_location5");
+
+                entity.Property(e => e.TempLocation6).HasColumnName("temp_location6");
+            });
+
+            modelBuilder.Entity<WeatherTrainSet1Hh>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("weather_train_set1_HH");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.SolarLocation1).HasColumnName("solar_location1");
+
+                entity.Property(e => e.SolarLocation2).HasColumnName("solar_location2");
+
+                entity.Property(e => e.SolarLocation3).HasColumnName("solar_location3");
+
+                entity.Property(e => e.SolarLocation4).HasColumnName("solar_location4");
+
+                entity.Property(e => e.SolarLocation5).HasColumnName("solar_location5");
+
+                entity.Property(e => e.SolarLocation6).HasColumnName("solar_location6");
+
+                entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
+
+                entity.Property(e => e.TempLocation2).HasColumnName("temp_location2");
+
+                entity.Property(e => e.TempLocation3).HasColumnName("temp_location3");
+
+                entity.Property(e => e.TempLocation4).HasColumnName("temp_location4");
+
+                entity.Property(e => e.TempLocation5).HasColumnName("temp_location5");
+
+                entity.Property(e => e.TempLocation6).HasColumnName("temp_location6");
+            });
+
+            modelBuilder.Entity<WeatherTrainSet2>(entity =>
+            {
+                entity.HasKey(e => e.Datetime);
+
+                entity.ToTable("weather_train_set2");
+
+                entity.Property(e => e.Datetime).HasColumnName("datetime");
+
+                entity.Property(e => e.SolarLocation1).HasColumnName("solar_location1");
+
+                entity.Property(e => e.SolarLocation2).HasColumnName("solar_location2");
+
+                entity.Property(e => e.SolarLocation3).HasColumnName("solar_location3");
+
+                entity.Property(e => e.SolarLocation4).HasColumnName("solar_location4");
+
+                entity.Property(e => e.SolarLocation5).HasColumnName("solar_location5");
+
+                entity.Property(e => e.SolarLocation6).HasColumnName("solar_location6");
+
+                entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
+
+                entity.Property(e => e.TempLocation2).HasColumnName("temp_location2");
+
+                entity.Property(e => e.TempLocation3).HasColumnName("temp_location3");
+
+                entity.Property(e => e.TempLocation4).HasColumnName("temp_location4");
+
+                entity.Property(e => e.TempLocation5).HasColumnName("temp_location5");
+
+                entity.Property(e => e.TempLocation6).HasColumnName("temp_location6");
+            });
+
+            modelBuilder.Entity<WeatherTrainSet2Hh>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("weather_train_set2_HH");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.SolarLocation1).HasColumnName("solar_location1");
+
+                entity.Property(e => e.SolarLocation2).HasColumnName("solar_location2");
+
+                entity.Property(e => e.SolarLocation3).HasColumnName("solar_location3");
+
+                entity.Property(e => e.SolarLocation4).HasColumnName("solar_location4");
+
+                entity.Property(e => e.SolarLocation5).HasColumnName("solar_location5");
+
+                entity.Property(e => e.SolarLocation6).HasColumnName("solar_location6");
+
+                entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
+
+                entity.Property(e => e.TempLocation2).HasColumnName("temp_location2");
+
+                entity.Property(e => e.TempLocation3).HasColumnName("temp_location3");
+
+                entity.Property(e => e.TempLocation4).HasColumnName("temp_location4");
+
+                entity.Property(e => e.TempLocation5).HasColumnName("temp_location5");
+
+                entity.Property(e => e.TempLocation6).HasColumnName("temp_location6");
+            });
+
+            modelBuilder.Entity<_10forecastinputsByTask>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("10FORECASTInputsByTask");
+
+                entity.Property(e => e.BankHoliday)
+                    .IsRequired()
+                    .HasColumnName("bankHoliday")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.DateTimeLocal).HasColumnName("dateTimeLocal");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DayOfWeek)
+                    .IsRequired()
+                    .HasColumnName("dayOfWeek")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.DayOfWeekNumber).HasColumnName("dayOfWeekNumber");
+
+                entity.Property(e => e.HourNumber).HasColumnName("hourNumber");
+
+                entity.Property(e => e.HourText)
+                    .IsRequired()
+                    .HasColumnName("hourText")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.MonthName)
+                    .IsRequired()
+                    .HasColumnName("monthName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.MonthNum).HasColumnName("monthNum");
+
+                entity.Property(e => e.SettlementPeriod).HasColumnName("settlementPeriod");
+
+                entity.Property(e => e.SolarLocation1).HasColumnName("solar_location1");
+
+                entity.Property(e => e.SolarLocation2).HasColumnName("solar_location2");
+
+                entity.Property(e => e.SolarLocation3).HasColumnName("solar_location3");
+
+                entity.Property(e => e.SolarLocation4).HasColumnName("solar_location4");
+
+                entity.Property(e => e.SolarLocation5).HasColumnName("solar_location5");
+
+                entity.Property(e => e.SolarLocation6).HasColumnName("solar_location6");
+
+                entity.Property(e => e.SummerWinter)
+                    .IsRequired()
+                    .HasColumnName("summerWinter")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Task).HasColumnName("task");
+
+                entity.Property(e => e.TempLocation1).HasColumnName("temp_location1");
+
+                entity.Property(e => e.TempLocation2).HasColumnName("temp_location2");
+
+                entity.Property(e => e.TempLocation3).HasColumnName("temp_location3");
+
+                entity.Property(e => e.TempLocation4).HasColumnName("temp_location4");
+
+                entity.Property(e => e.TempLocation5).HasColumnName("temp_location5");
+
+                entity.Property(e => e.TempLocation6).HasColumnName("temp_location6");
+
+                entity.Property(e => e.TimeOfDayLocal).HasColumnName("timeOfDayLocal");
+
+                entity.Property(e => e.WeekNumber).HasColumnName("weekNumber");
+
+                entity.Property(e => e.WorkingDay)
+                    .IsRequired()
+                    .HasColumnName("workingDay")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<_20forecastoutputsByTaskRun>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("20FORECASTOutputsByTaskRun");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DemandForecastModelName).HasMaxLength(50);
+
+                entity.Property(e => e.DemandModelGuid)
+                    .HasColumnName("DemandModelGUID")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.ForecastDemandMw).HasColumnName("ForecastDemandMW");
+
+                entity.Property(e => e.ForecastPv).HasColumnName("ForecastPV");
+
+                entity.Property(e => e.PvforecastModelName)
+                    .HasColumnName("PVForecastModelName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.PvmodelGuid)
+                    .HasColumnName("PVModelGUID")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.RunId).HasColumnName("runID");
+
+                entity.Property(e => e.RunTimeStamp).HasColumnName("runTimeStamp");
+
+                entity.Property(e => e.Task).HasColumnName("task");
+
+                entity.Property(e => e.TaskName)
+                    .HasColumnName("taskName")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+            });
+
+            modelBuilder.Entity<_30resultsoptimisation>(entity =>
+            {
+                entity.HasKey(e => e.Datetime)
+                    .HasName("PK_task0ForecastsPVandDemand_Run1_OPTIMISE_BY_HAND_20210207_1312");
+
+                entity.ToTable("30RESULTSOptimisation");
+
+                entity.Property(e => e.Datetime).HasColumnName("datetime");
+
+                entity.Property(e => e.ChargeMw).HasColumnName("charge_MW");
+
+                entity.Property(e => e.D).HasMaxLength(50);
+
+                entity.Property(e => e.K)
+                    .HasColumnName("k")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.RunDateTime).HasColumnName("runDateTime");
+
+                entity.Property(e => e.RunId).HasColumnName("runID");
+
+                entity.Property(e => e.TaksSoCmwh).HasColumnName("taksSoCMWh");
+
+                entity.Property(e => e.TaskBatteryChargeMw).HasColumnName("taskBatteryChargeMW");
+
+                entity.Property(e => e.TaskBatteryDischargeMw).HasColumnName("taskBatteryDischargeMW");
+
+                entity.Property(e => e.TaskBatteryNetMw).HasColumnName("taskBatteryNetMW");
+
+                entity.Property(e => e.TaskChargePv).HasColumnName("taskChargePV");
+
+                entity.Property(e => e.TaskForecastDemandMw).HasColumnName("taskForecastDemandMW");
+
+                entity.Property(e => e.TaskForecsatPvmw).HasColumnName("taskForecsatPVMW");
+
+                entity.Property(e => e.TaskGridTopUpMw).HasColumnName("taskGridTopUpMW");
+
+                entity.Property(e => e.TaskNetDemandMw).HasColumnName("taskNetDemandMW");
             });
 
             OnModelCreatingPartial(modelBuilder);
