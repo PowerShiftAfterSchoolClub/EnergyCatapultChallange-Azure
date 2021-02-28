@@ -7,10 +7,9 @@ using System.Collections.Generic;
 
 namespace Energy.Captapult.Challenge.DataAccess
 {
-    public partial class Task0TrainingCalendarPvweatherHh
+    public partial class WeatherTrainSet2Hh
     {
         public DateTime DateTimeUtc { get; set; }
-        public double? RawPvPowerMw { get; set; }
         public double TempLocation3 { get; set; }
         public double TempLocation6 { get; set; }
         public double TempLocation2 { get; set; }
@@ -23,19 +22,5 @@ namespace Energy.Captapult.Challenge.DataAccess
         public double SolarLocation4 { get; set; }
         public double SolarLocation5 { get; set; }
         public double SolarLocation1 { get; set; }
-        public string SummerWinter { get; set; }
-        public DateTime DateTimeLocal { get; set; }
-        public int Year { get; set; }
-        public int MonthNum { get; set; }
-        public string MonthName { get; set; }
-        public int WeekNumber { get; set; }
-        public string DayOfWeek { get; set; }
-        public int DayOfWeekNumber { get; set; }
-        public string HourText { get; set; }
-        public int HourNumber { get; set; }
-        public int SettlementPeriod { get; set; }
-        public DateTime TimeOfDayLocal { get; set; }
-        public string BankHoliday { get; set; }
-        public string WorkingDay { get; set; }
     }
 }

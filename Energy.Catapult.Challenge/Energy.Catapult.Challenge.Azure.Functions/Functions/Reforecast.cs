@@ -56,7 +56,7 @@ namespace Energy.Catapult.Challenge.Azure.Functions.Functions
 
             var fromUtc = DateTime.Parse(req.Query["fromUtc"]);
             var toUtc = DateTime.Parse(req.Query["toUtc"]);
-            var task = req.Query["task"];
+            var task = Convert.ToInt32(req.Query["task"]);
 
 
             if (fromUtc > toUtc)
@@ -65,7 +65,7 @@ namespace Energy.Catapult.Challenge.Azure.Functions.Functions
             }
 
             // Get the weather
-            var request = this.GetWeatherForecast(fromUtc, toUtc);
+            var request = this.GetWeatherForecast(fromUtc, toUtc, task);
 
             // Get PV and Demand forecasts from the ML
             var forecast = await this.GetPvAndDemandForecasts(task, request);
@@ -79,18 +79,20 @@ namespace Energy.Catapult.Challenge.Azure.Functions.Functions
             // Return both to user
             return new OkObjectResult(new
             {
+
+
                 weather = request.data,
                 forecast
             });
         }
 
-        private async Task<List<Task0ForecastsPvandDemandRun1>> GetPvAndDemandForecasts(Microsoft.Extensions.Primitives.StringValues task, ForecastRequest request)
+        private async Task<List<Task0ForecastsPvandDemandRun1>> GetPvAndDemandForecasts(int task, ForecastRequest request)
         {
-            // Get PV Forecast
-            var pvForecast = await this.pvForecaster.GetAsync(request);
-
             // GET Demand Forecast
             var demandForecast = await this.demandForecaster.GetAsync(request);
+
+            // Get PV Forecast
+            var pvForecast = await this.pvForecaster.GetAsync(request);
 
             // Stitch together
             var forecast = new List<Task0ForecastsPvandDemandRun1>();
@@ -102,18 +104,18 @@ namespace Energy.Catapult.Challenge.Azure.Functions.Functions
                     DateTimeUtc = DateTime.Parse(request.data[i].dateTimeUTC),
                     Task0ForecsatPv = pvForecast.result[i],
                     Task0ForecastDemandMw = demandForecast.result[i],
-                    TaskName = task
+                    TaskName = ""
                 });
             }
 
             return forecast;
         }
 
-        private ForecastRequest GetWeatherForecast(DateTime fromUtc, DateTime toUtc)
+        private ForecastRequest GetWeatherForecast(DateTime fromUtc, DateTime toUtc, int task)
         {
             // Get the weather forecast for the supplied dates
-            var weatherForecast = dbClient.Task0ForecastCalendarMapWithForecastWeatherHhs
-                .Where(w => w.DateTimeUtc >= fromUtc && w.DateTimeUtc <= toUtc)
+            var weatherForecast = dbClient._10forecastinputsByTask
+                .Where(w => w.DateTimeUtc >= fromUtc && w.DateTimeUtc <= toUtc && w.Task == task)
                 .ToList();
 
             // Map to the right format for the ML API

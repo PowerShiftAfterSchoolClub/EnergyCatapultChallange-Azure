@@ -1,4 +1,6 @@
-﻿namespace Energy.Catapult.Challenge.Azure.Functions.Domain.Model
+﻿using System.Text.Json.Serialization;
+
+namespace Energy.Catapult.Challenge.Azure.Functions.Domain.Model
 {
     public class ForecastRequestItem
     {
@@ -26,6 +28,7 @@
         public int hourText { get; set; }
         public int hourNumber { get; set; }
         public int settlementPeriod { get; set; }
+        public string timeOfDayLocal { get; set; }
         public string bankHoliday { get; set; }
         public string workingDay { get; set; }
     }

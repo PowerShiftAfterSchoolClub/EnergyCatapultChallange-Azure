@@ -7,9 +7,9 @@ using System.Collections.Generic;
 
 namespace Energy.Captapult.Challenge.DataAccess
 {
-    public partial class WeatherTrainSet0
+    public partial class WeatherTrainSet1
     {
-        public DateTime DatetimeUtc { get; set; }
+        public DateTime Datetime { get; set; }
         public double? TempLocation3 { get; set; }
         public double? TempLocation6 { get; set; }
         public double? TempLocation2 { get; set; }

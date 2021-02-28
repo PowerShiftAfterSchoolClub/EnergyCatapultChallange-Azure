@@ -7,11 +7,13 @@ using System.Collections.Generic;
 
 namespace Energy.Captapult.Challenge.DataAccess
 {
-    public partial class PvTrainSet0
+    public partial class Tasks
     {
-        public DateTime DateTimeUtc { get; set; }
-        public double? RawIrradianceWm2 { get; set; }
-        public double? RawPvPowerMw { get; set; }
-        public double? RawPanelTempC { get; set; }
+        public int TaskId { get; set; }
+        public string TaskName { get; set; }
+        public DateTime FromDate { get; set; }
+        public DateTime ToDate { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public string CreatedBy { get; set; }
     }
 }

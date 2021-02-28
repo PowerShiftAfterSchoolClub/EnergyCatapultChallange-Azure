@@ -27,9 +27,9 @@ namespace Energy.Catapult.Challenge.Azure.Functions.Domain.Forecasts
 
             var response = await this.http.PostAsJsonAsync(modelUrl, request);
 
-            response.EnsureSuccessStatusCode();
-
             var responseString = await response.Content.ReadAsStringAsync();
+
+            response.EnsureSuccessStatusCode();
 
             // Deserialise - the JSON we're getting back is a mess: unescape and drop first and last elements.
             var forecast = JsonSerializer.Deserialize<ForecastResult>(Regex.Unescape(responseString)[1..^1]);

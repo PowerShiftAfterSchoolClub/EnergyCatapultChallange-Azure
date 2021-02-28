@@ -11,7 +11,7 @@ namespace Energy.Catapult.Challenge.Azure.Functions.Mappers
     {
         public WeatherForecastProfile()
         {
-            CreateMap<Task0ForecastCalendarMapWithForecastWeatherHh, ForecastRequestItem>();
+            CreateMap<_10forecastinputsByTask, ForecastRequestItem>();
         }
     }
 }
