@@ -69,7 +69,6 @@ namespace Energy.Captapult.Challenge.DataAccess
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=serverenergycatapult.database.windows.net;Database=dBEnergyCatapultPresumedOpenDataChallange;User Id=DreamTeam;Password=<PW>;");
             }
         }
 
