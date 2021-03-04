@@ -20,6 +20,7 @@ namespace Energy.Captapult.Challenge.DataAccess
         }
 
         public virtual DbSet<Assets> Assets { get; set; }
+        public virtual DbSet<BackupOptResults> BackupOptResults { get; set; }
         public virtual DbSet<CalendarMap> CalendarMap { get; set; }
         public virtual DbSet<CalendarMapOld> CalendarMapOld { get; set; }
         public virtual DbSet<DemandTrainSet0> DemandTrainSet0 { get; set; }
@@ -37,6 +38,7 @@ namespace Energy.Captapult.Challenge.DataAccess
         public virtual DbSet<Task0forecastCalendarMap> Task0forecastCalendarMap { get; set; }
         public virtual DbSet<Task1ForecastCalendarMap> Task1ForecastCalendarMap { get; set; }
         public virtual DbSet<Task1ForecastCalendarMapWithForecastWeatherHh> Task1ForecastCalendarMapWithForecastWeatherHh { get; set; }
+        public virtual DbSet<Task1ForecastsPvandDemandModelComparisons> Task1ForecastsPvandDemandModelComparisons { get; set; }
         public virtual DbSet<Task1ForecastsPvandDemandRun1> Task1ForecastsPvandDemandRun1 { get; set; }
         public virtual DbSet<Task1TrainingCalWeatherHh> Task1TrainingCalWeatherHh { get; set; }
         public virtual DbSet<Task1TrainingCalendarDemandWeatherHh> Task1TrainingCalendarDemandWeatherHh { get; set; }
@@ -44,6 +46,9 @@ namespace Energy.Captapult.Challenge.DataAccess
         public virtual DbSet<Task1TrainingCalendarPvweatherHh> Task1TrainingCalendarPvweatherHh { get; set; }
         public virtual DbSet<Task2ForecastCalendarMap> Task2ForecastCalendarMap { get; set; }
         public virtual DbSet<Task2ForecastCalendarMapWithForecastWeatherHh> Task2ForecastCalendarMapWithForecastWeatherHh { get; set; }
+        public virtual DbSet<Task2ForecastsPvandDemandRun1> Task2ForecastsPvandDemandRun1 { get; set; }
+        public virtual DbSet<Task2ForecastsPvandDemandRun1OptimiseByHand20210228> Task2ForecastsPvandDemandRun1OptimiseByHand20210228 { get; set; }
+        public virtual DbSet<Task2ForecastsPvandDemandRun2OptimiseByHand20210302> Task2ForecastsPvandDemandRun2OptimiseByHand20210302 { get; set; }
         public virtual DbSet<Task2TrainingCalWeatherHh> Task2TrainingCalWeatherHh { get; set; }
         public virtual DbSet<Task2TrainingCalendarDemandWeatherHh> Task2TrainingCalendarDemandWeatherHh { get; set; }
         public virtual DbSet<Task2TrainingCalendarMap> Task2TrainingCalendarMap { get; set; }
@@ -57,6 +62,7 @@ namespace Energy.Captapult.Challenge.DataAccess
         public virtual DbSet<WeatherTrainSet2Hh> WeatherTrainSet2Hh { get; set; }
         public virtual DbSet<_10forecastinputsByTask> _10forecastinputsByTask { get; set; }
         public virtual DbSet<_20forecastoutputsByTaskRun> _20forecastoutputsByTaskRun { get; set; }
+        public virtual DbSet<_21forecastoutputsByTaskRun> _21forecastoutputsByTaskRun { get; set; }
         public virtual DbSet<_30resultsoptimisation> _30resultsoptimisation { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -116,6 +122,41 @@ namespace Energy.Captapult.Challenge.DataAccess
                 entity.Property(e => e.PowerMw)
                     .HasColumnName("powerMW")
                     .HasColumnType("decimal(10, 3)");
+            });
+
+            modelBuilder.Entity<BackupOptResults>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("backupOptResults");
+
+                entity.Property(e => e.ChargeMw).HasColumnName("charge_MW");
+
+                entity.Property(e => e.Datetime).HasColumnName("datetime");
+
+                entity.Property(e => e.K).HasColumnName("k");
+
+                entity.Property(e => e.RunDateTime).HasColumnName("runDateTime");
+
+                entity.Property(e => e.RunId).HasColumnName("runID");
+
+                entity.Property(e => e.TaksSoCmwh).HasColumnName("taksSoCMWh");
+
+                entity.Property(e => e.TaskBatteryChargeMw).HasColumnName("taskBatteryChargeMW");
+
+                entity.Property(e => e.TaskBatteryDischargeMw).HasColumnName("taskBatteryDischargeMW");
+
+                entity.Property(e => e.TaskBatteryNetMw).HasColumnName("taskBatteryNetMW");
+
+                entity.Property(e => e.TaskChargePv).HasColumnName("taskChargePV");
+
+                entity.Property(e => e.TaskForecastDemandMw).HasColumnName("taskForecastDemandMW");
+
+                entity.Property(e => e.TaskForecsatPvmw).HasColumnName("taskForecsatPVMW");
+
+                entity.Property(e => e.TaskGridTopUpMw).HasColumnName("taskGridTopUpMW");
+
+                entity.Property(e => e.TaskNetDemandMw).HasColumnName("taskNetDemandMW");
             });
 
             modelBuilder.Entity<CalendarMap>(entity =>
@@ -918,6 +959,27 @@ namespace Energy.Captapult.Challenge.DataAccess
                 entity.Property(e => e.Year).HasColumnName("year");
             });
 
+            modelBuilder.Entity<Task1ForecastsPvandDemandModelComparisons>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("task1ForecastsPVandDemand_ModelComparisons");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.ForeDemandMwtask0Model).HasColumnName("foreDemandMWTask0Model");
+
+                entity.Property(e => e.ForeDemandMwtask1Model).HasColumnName("foreDemandMWTask1Model");
+
+                entity.Property(e => e.ForeDemandMwtask2Model).HasColumnName("foreDemandMWTask2Model");
+
+                entity.Property(e => e.ForePvmwtask0Model).HasColumnName("forePVMWTask0Model");
+
+                entity.Property(e => e.ForePvmwtask1Model).HasColumnName("forePVMWTask1Model");
+
+                entity.Property(e => e.ForePvmwtask2Model).HasColumnName("forePVMWTask2Model");
+            });
+
             modelBuilder.Entity<Task1ForecastsPvandDemandRun1>(entity =>
             {
                 entity.HasKey(e => e.DateTimeUtc);
@@ -1377,6 +1439,95 @@ namespace Energy.Captapult.Challenge.DataAccess
                     .HasMaxLength(50);
 
                 entity.Property(e => e.Year).HasColumnName("year");
+            });
+
+            modelBuilder.Entity<Task2ForecastsPvandDemandRun1>(entity =>
+            {
+                entity.HasKey(e => e.DateTimeUtc);
+
+                entity.ToTable("task2ForecastsPVandDemand_Run1");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DemandMwtask2).HasColumnName("demandMWtask2");
+
+                entity.Property(e => e.Pvmwtask2)
+                    .HasColumnName("PVMWtask2")
+                    .HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Task2ForecastsPvandDemandRun1OptimiseByHand20210228>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("task2ForecastsPVandDemand_Run1_OPTIMISE_BY_HAND_20210228");
+
+                entity.Property(e => e.ChargeMw).HasColumnName("charge_MW");
+
+                entity.Property(e => e.Datetime)
+                    .HasColumnName("datetime")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.K).HasColumnName("k");
+
+                entity.Property(e => e.RunDateTime)
+                    .HasColumnName("runDateTime")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.RunId).HasColumnName("runID");
+
+                entity.Property(e => e.TaksSoCmwh).HasColumnName("taksSoCMWh");
+
+                entity.Property(e => e.TaskBatteryChargeMw).HasColumnName("taskBatteryChargeMW");
+
+                entity.Property(e => e.TaskBatteryDischargeMw).HasColumnName("taskBatteryDischargeMW");
+
+                entity.Property(e => e.TaskBatteryNetMw).HasColumnName("taskBatteryNetMW");
+
+                entity.Property(e => e.TaskChargePv).HasColumnName("taskChargePV");
+
+                entity.Property(e => e.TaskForecastDemandMw).HasColumnName("taskForecastDemandMW");
+
+                entity.Property(e => e.TaskForecsatPvmw).HasColumnName("taskForecsatPVMW");
+
+                entity.Property(e => e.TaskGridTopUpMw).HasColumnName("taskGridTopUpMW");
+
+                entity.Property(e => e.TaskNetDemandMw).HasColumnName("taskNetDemandMW");
+            });
+
+            modelBuilder.Entity<Task2ForecastsPvandDemandRun2OptimiseByHand20210302>(entity =>
+            {
+                entity.HasKey(e => e.Datetime);
+
+                entity.ToTable("task2ForecastsPVandDemand_Run2_OPTIMISE_BY_HAND_20210302");
+
+                entity.Property(e => e.Datetime).HasColumnName("datetime");
+
+                entity.Property(e => e.ChargeMw).HasColumnName("charge_MW");
+
+                entity.Property(e => e.K).HasColumnName("k");
+
+                entity.Property(e => e.RunDateTime).HasColumnName("runDateTime");
+
+                entity.Property(e => e.RunId).HasColumnName("runID");
+
+                entity.Property(e => e.TaksSoCmwh).HasColumnName("taksSoCMWh");
+
+                entity.Property(e => e.TaskBatteryChargeMw).HasColumnName("taskBatteryChargeMW");
+
+                entity.Property(e => e.TaskBatteryDischargeMw).HasColumnName("taskBatteryDischargeMW");
+
+                entity.Property(e => e.TaskBatteryNetMw).HasColumnName("taskBatteryNetMW");
+
+                entity.Property(e => e.TaskChargePv).HasColumnName("taskChargePV");
+
+                entity.Property(e => e.TaskForecastDemandMw).HasColumnName("taskForecastDemandMW");
+
+                entity.Property(e => e.TaskForecsatPvmw).HasColumnName("taskForecsatPVMW");
+
+                entity.Property(e => e.TaskGridTopUpMw).HasColumnName("taskGridTopUpMW");
+
+                entity.Property(e => e.TaskNetDemandMw).HasColumnName("taskNetDemandMW");
             });
 
             modelBuilder.Entity<Task2TrainingCalWeatherHh>(entity =>
@@ -2034,18 +2185,55 @@ namespace Energy.Captapult.Challenge.DataAccess
                     .IsFixedLength();
             });
 
+            modelBuilder.Entity<_21forecastoutputsByTaskRun>(entity =>
+            {
+                entity.ToTable("21FORECASTOutputsByTaskRun");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.DateTimeUtc).HasColumnName("dateTimeUTC");
+
+                entity.Property(e => e.DemandForecastModelName).HasMaxLength(50);
+
+                entity.Property(e => e.DemandModelGuid)
+                    .HasColumnName("DemandModelGUID")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.ForecastDemandMw).HasColumnName("ForecastDemandMW");
+
+                entity.Property(e => e.ForecastPv).HasColumnName("ForecastPV");
+
+                entity.Property(e => e.PvforecastModelName)
+                    .HasColumnName("PVForecastModelName")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.PvmodelGuid)
+                    .HasColumnName("PVModelGUID")
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.RunId).HasColumnName("runID");
+
+                entity.Property(e => e.RunTimeStamp).HasColumnName("runTimeStamp");
+
+                entity.Property(e => e.Task).HasColumnName("task");
+
+                entity.Property(e => e.TaskName)
+                    .HasColumnName("taskName")
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+            });
+
             modelBuilder.Entity<_30resultsoptimisation>(entity =>
             {
-                entity.HasKey(e => e.Datetime)
-                    .HasName("PK_task0ForecastsPVandDemand_Run1_OPTIMISE_BY_HAND_20210207_1312");
+                entity.HasNoKey();
 
                 entity.ToTable("30RESULTSOptimisation");
-
-                entity.Property(e => e.Datetime).HasColumnName("datetime");
 
                 entity.Property(e => e.ChargeMw).HasColumnName("charge_MW");
 
                 entity.Property(e => e.D).HasMaxLength(50);
+
+                entity.Property(e => e.Datetime).HasColumnName("datetime");
 
                 entity.Property(e => e.K)
                     .HasColumnName("k")
